@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcardoso <jcardoso@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/01 10:29:02 by jcardoso          #+#    #+#             */
+/*   Updated: 2024/10/01 10:29:04 by jcardoso         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -19,5 +31,4 @@ int	main()
 	char src[] = "Joao Flavio";
 	char dest[20];
 	printf("%s\n",(char *) ft_memcpy(dest, src, 7));
-	return (0);
 }

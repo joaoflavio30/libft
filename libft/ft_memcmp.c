@@ -1,35 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcardoso <jcardoso@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 10:29:11 by jcardoso          #+#    #+#             */
-/*   Updated: 2024/10/01 10:29:13 by jcardoso         ###   ########.fr       */
+/*   Created: 2024/10/01 10:36:14 by jcardoso          #+#    #+#             */
+/*   Updated: 2024/10/01 11:14:25 by jcardoso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *dst, size_t n)
+int	memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;
-	unsigned char	*dest;
+	unsigned char	*s1_ref;
+	unsigned char	*s2_ref;
 
-	dest = (unsigned char*)dst;
-	
 	i = 0;
-	while(i++ < n)
-		*dest++ = 0;
+	s1_ref = (unsigned char *)s1;
+	s2_ref = (unsigned char *)s2;
+
+	while ((*s1_ref || *s2_ref) && i++ < n)
+	{
+		if(*s1_ref != *s2_ref)
+			return (*s1_ref - *s2_ref);
+		s1_ref++;
+		s2_ref++;
+	}
+	return (0);
 }
 
 int	main()
 {
-#include <strings.h>
-#include <stdio.h>
-	char str[] = "Ola mundo";
-	ft_bzero(str, 5);
-	printf("%s\n",str);
+	char str[] = "joaa";
+	char str2[] = "joao";
+	#include <stdio.h>
+	printf("%d\n", memcmp(str, str2, 4));
 	return (0);
 }
+
