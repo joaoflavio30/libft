@@ -24,7 +24,7 @@ char*	ft_strrchr(const char* str, int c)
 	return (NULL);
 }
 
-int	main()
+/*int	main()
 {
 	#include <stdio.h>
 	char str[] = "Joao Flavio";
@@ -32,4 +32,4 @@ int	main()
 
 	printf("%s\n", ft_strrchr(str, c));
 	return (0);
-}
+}*/

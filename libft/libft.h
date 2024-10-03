@@ -6,7 +6,7 @@
 /*   By: jcardoso <jcardoso@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:28:23 by jcardoso          #+#    #+#             */
-/*   Updated: 2024/09/24 11:47:45 by jcardoso         ###   ########.fr       */
+/*   Updated: 2024/10/03 10:52:50 by jcardoso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,6 @@ char    *ft_strdup(const char *s);
 char *ft_substr(char const *s, unsigned int start,
 size_t len);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+char	*ft_strchr(const char *str, int search_str);
+char	*ft_strchr(const char *str, int search_str);
 #endif
