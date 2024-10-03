@@ -22,5 +22,9 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 size_t	ft_strlen(const char*str);
-
+void	*ft_memset(void *dest, int c, size_t count);
+char    *ft_strdup(const char *s);
+char *ft_substr(char const *s, unsigned int start,
+size_t len);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 #endif

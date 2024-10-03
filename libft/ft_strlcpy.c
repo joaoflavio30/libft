@@ -19,8 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	return (i-1);
 }
-
-int	main()
+/*int	main()
 {
 	#include <stdio.h>
 	#include <string.h>
@@ -29,4 +28,4 @@ int	main()
 	ft_strlcpy(str2,str, 20);
 	printf("%s\n", str2);
 	return (0);
-}
+}*/
