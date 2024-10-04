@@ -24,9 +24,15 @@ int		ft_isprint(int c);
 size_t	ft_strlen(const char*str);
 void	*ft_memset(void *dest, int c, size_t count);
 char    *ft_strdup(const char *s);
+char *ft_itoa(int n);
 char *ft_substr(char const *s, unsigned int start,
 size_t len);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 char	*ft_strchr(const char *str, int search_str);
 char	*ft_strchr(const char *str, int search_str);
+void    ft_putstr_fd(char *s, int fd);
+void ft_putchar_fd(char c, int fd);
+void ft_putendl_fd(char *s, int fd);
+void ft_putnbr_fd(int n, int fd);
+
 #endif

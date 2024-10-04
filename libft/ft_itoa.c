@@ -55,12 +55,11 @@ char	*ft_itoa(int n)
 	}
 	return (numb);
 }
-
-int	main()
+/*int	main()
 {
 	#include <stdlib.h>
 	#include <stdio.h>
 
 	printf("%s\n", ft_itoa(0422));
 	return (0);
-}
+}*/

@@ -14,7 +14,7 @@ size_t len)
             substr[i++] = s[start++];
     substr[i] = '\0';
     return (substr);
-}
+}/*
  #include <stdio.h>
 int main()
 {
@@ -22,4 +22,4 @@ int main()
     char *p = ft_substr(s, 5, 20);
     printf("%s\n", p);
     return (0);
-}
+}*/
