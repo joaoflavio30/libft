@@ -1,6 +1,6 @@
 # -*- Makefile -*-
 
-PROJ_NAME=libft.a
+NAME=libft.a
 
 C_SOURCE= C_SOURCE = ./ft_atoi.c ./ft_bzero.c ./ft_calloc.c ./ft_isalnum.c ./ft_isalpha.c \
            ./ft_isascii.c ./ft_isdigit.c ./ft_isprint.c ./ft_itoa.c ./ft_lstadd_back.c \
@@ -14,13 +14,18 @@ C_SOURCE= C_SOURCE = ./ft_atoi.c ./ft_bzero.c ./ft_calloc.c ./ft_isalnum.c ./ft_
 
 OBJECTS = $(C_SOURCE:.c=.o)
 
-all: $(PROJ_NAME)
+all: $(NAME)
 
-$(PROJ_NAME): $(OBJECTS)
-	ar rcs $(PROJ_NAME) $(OBJECTS)
+$(NAME): $(OBJECTS)
+	ar rcs $(NAME) $(OBJECTS) ranlib $(NAME)
 
 $(OBJECTS): $(C_SOURCE)
 	cc -Wall -Werror -Wextra -c $(C_SOURCE)
 
 clean:
 	rm *.o
+
+fclean: clean
+    rm -f $(NAME)
+
+re: flcean all
