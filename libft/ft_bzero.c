@@ -22,9 +22,7 @@ void	ft_bzero(void *dst, size_t n)
 	i = 0;
 	while(i++ < n)
 		*dest++ = 0;
-}
-
-int	main()
+}/*int	main()
 {
 #include <strings.h>
 #include <stdio.h>
@@ -32,4 +30,4 @@ int	main()
 	ft_bzero(str, 5);
 	printf("%s\n",str);
 	return (0);
-}
+}*/

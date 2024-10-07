@@ -17,8 +17,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		p++;
 	}
 	return (NULL);
-}
-int	main()
+}/*int	main()
 {
 #include <stdio.h>
  const char str1[] = "abcdef";
@@ -33,4 +32,4 @@ int	main()
 					      }
 
 	     return 0;
-}
+}*/

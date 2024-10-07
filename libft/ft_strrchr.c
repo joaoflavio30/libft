@@ -23,7 +23,6 @@ char*	ft_strrchr(const char* str, int c)
 		return (char *) (str2);
 	return (NULL);
 }
-
 /*int	main()
 {
 	#include <stdio.h>

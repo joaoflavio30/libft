@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
@@ -33,12 +33,11 @@ char	*strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-int	main()
+/*int	main()
 {
 	char b[] = "asdlsakd asrenato";
 	char l[] = "asr";
 	#include <stdio.h>
-	printf("%s\n", strnstr(b,l,4));
+	printf("%s\n", ft_strnstr(b,l,4));
 	return (0);
-}
+}*/

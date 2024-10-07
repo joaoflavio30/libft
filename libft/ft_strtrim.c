@@ -35,11 +35,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(str, s1 + start, end - start + 2);
 	return (str);
 }
-
-#include <stdio.h>
+/*#include <stdio.h>
 int main()
 {
         printf("%s\n", ft_strtrim("******!**abc****", "*a"));
 
     return (0);
-}
+}*/

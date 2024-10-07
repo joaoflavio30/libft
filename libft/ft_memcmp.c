@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;
 	unsigned char	*s1_ref;
@@ -30,14 +30,11 @@ int	memcmp(const void *s1, const void *s2, size_t n)
 		s2_ref++;
 	}
 	return (0);
-}
-
-int	main()
+}/*int	main()
 {
 	char str[] = "joaa";
 	char str2[] = "joao";
 	#include <stdio.h>
-	printf("%d\n", memcmp(str, str2, 4));
+	printf("%d\n", ft_memcmp(str, str2, 4));
 	return (0);
-}
-
+}*/

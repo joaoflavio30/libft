@@ -27,8 +27,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		i--;
 	}
 	return (dest);
-}
-int	main()
+}/*int	main()
 {
 	#include <string.h>
 	#include <stdio.h>
@@ -39,4 +38,4 @@ int	main()
 	printf("ft_memmove : %s\n",(char *) ft_memmove(d, str, 5));
 	printf("memmove : %s\n",(char *) memmove(d2, st, 5));
 	return (0);
-}
+}*/

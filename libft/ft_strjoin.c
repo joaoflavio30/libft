@@ -26,8 +26,7 @@ char    *ft_strjoin(char const *s1, char const *s2)
     str[s1_len] = '\0';
     return (str);
 }
-
-#include <stdio.h>
+/*#include <stdio.h>
 int main(int ac, char *av[])
 {
     if(ac == 3)
@@ -37,4 +36,4 @@ int main(int ac, char *av[])
         printf("%s\n", ft_strjoin(av[1],av[2]));
     }
     return (0);
-}
+}*/

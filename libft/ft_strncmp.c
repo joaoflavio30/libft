@@ -27,8 +27,7 @@ int	ft_strncmp(const char *str1, const char *str2, size_t n)
 	}
 	return (0);
 }
-
-int	main()
+/*int	main()
 {
 	char str1[] = "abbfff";
 	char str2[] = "abbfffa";
@@ -36,5 +35,4 @@ int	main()
 #include <stdio.h>
 	printf("%d\n", ft_strncmp(str1, str2, 7));
 	return (0);
-}
-
+}*/

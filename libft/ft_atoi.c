@@ -35,13 +35,11 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	return (numb * signal);
-}
-
-#include <stdlib.h>
+}/*#include <stdlib.h>
 int	main()
 {
 	#include <stdio.h>
 	printf("atoi: %i\n", atoi("027483648"));
 	printf("ft_atoi: %i\n", ft_atoi("027483648"));
 	return (0);
-}
+}*/

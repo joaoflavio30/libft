@@ -30,9 +30,9 @@ char    *ft_strdup(const char *s)
         duplicate[i] = '\0';
         return (duplicate);
 }
-int main()
+/*int main()
 {
     char s[] = "Joao Flavio";
     printf("%s\n", ft_strdup(s));
     return (0);
-}
+}*/

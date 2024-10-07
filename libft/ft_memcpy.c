@@ -23,12 +23,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	while(i++ < n)
 		*dest_temp++ = *src_temp++;
 	return dest;
-}
-
-int	main()
+}/*int	main()
 {
 #include <stdio.h>
 	char src[] = "Joao Flavio";
 	char dest[20];
 	printf("%s\n",(char *) ft_memcpy(dest, src, 7));
-}
+}*/

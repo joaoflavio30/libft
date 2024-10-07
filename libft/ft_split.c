@@ -64,7 +64,7 @@ char **ft_split(char const *s, char c)
 			return (NULL);
 		return (split(s, array, 0, c));
 }
-#include <stdio.h>
+/*#include <stdio.h>
 int main()
 {
 		int i = 0;
@@ -76,4 +76,4 @@ int main()
 		}
 		printf("arr[0][8] : %c\n", arr[0][6]);
 		return (0);
-}
+}*/
