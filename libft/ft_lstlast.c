@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcardoso <jcardoso@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/07 18:20:39 by jcardoso          #+#    #+#             */
+/*   Updated: 2024/10/07 18:20:39 by jcardoso         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-    while (lst->next != NULL)
-        lst = lst->next;
-    return (lst);
-}/*
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
+}
+/*
 #include <stdio.h>
 int main()
 {
@@ -28,7 +41,7 @@ int main()
     *valor2 = 2;
     *valor3 = 3;
     *valor4 = 4;
-    
+
 
     node->content =  valor;
     node2->content = valor2;
@@ -39,7 +52,7 @@ int main()
     node2->next = node3;
     node3->next = node4;
     node4->next = NULL;
-    
+
     t_list *last_node = ft_lstlast(node);
 
     printf("%d\n",  *((int *)last_node->content));

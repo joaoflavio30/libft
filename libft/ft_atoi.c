@@ -9,17 +9,18 @@
 /*   Updated: 2024/10/01 14:30:10 by jcardoso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 int	ft_atoi(const char *nptr)
 {
 	int		signal;
 	int		numb;
-	int	i;
+	int		i;
 
 	signal = 1;
 	i = 0;
 	numb = 0;
-	while (nptr[i] == ' ' || nptr[i] == '\n' || nptr[i] == '\v' 
-	|| nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == '\t')
+	while (nptr[i] == ' ' || nptr[i] == '\n' || nptr[i] == '\v'
+		|| nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == '\t')
 		i++;
 	while (nptr[i] == '-' || nptr[i] == '+')
 	{
@@ -35,11 +36,5 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	return (numb * signal);
-}/*#include <stdlib.h>
-int	main()
-{
-	#include <stdio.h>
-	printf("atoi: %i\n", atoi("027483648"));
-	printf("ft_atoi: %i\n", ft_atoi("027483648"));
-	return (0);
-}*/
+}
+

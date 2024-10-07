@@ -23,11 +23,5 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	ft_memset(ptr, 0, size * nmemb);
 	return (ptr);
-}/*int main()
-{
-    #include <stdio.h>
-    int *ptr = (int *)ft_calloc(10, sizeof(int));
+}
 
-  printf("I have %d\n", ptr[9]);
-  return 0;
-}*/

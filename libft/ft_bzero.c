@@ -18,11 +18,11 @@ void	ft_bzero(void *dst, size_t n)
 	unsigned char	*dest;
 
 	dest = (unsigned char*)dst;
-	
 	i = 0;
-	while(i++ < n)
+	while (i++ < n)
 		*dest++ = 0;
-}/*int	main()
+}
+/*int	main()
 {
 #include <strings.h>
 #include <stdio.h>

@@ -24,13 +24,14 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	while ((*s1_ref || *s2_ref) && i++ < n)
 	{
-		if(*s1_ref != *s2_ref)
+		if (*s1_ref != *s2_ref)
 			return (*s1_ref - *s2_ref);
 		s1_ref++;
 		s2_ref++;
 	}
 	return (0);
-}/*int	main()
+}
+/*int	main()
 {
 	char str[] = "joaa";
 	char str2[] = "joao";

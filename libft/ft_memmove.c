@@ -11,15 +11,16 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	int				i;
 	unsigned char	*dest_temp;
 	unsigned char	*src_temp;
 
-	i = n-1;
-	dest_temp = (unsigned char*)dest;
-	src_temp = (unsigned char*)src;
+	i = n - 1;
+	dest_temp = (unsigned char *)dest;
+	src_temp = (unsigned char *)src;
 
 	while (i >= 0)
 	{
@@ -27,7 +28,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		i--;
 	}
 	return (dest);
-}/*int	main()
+}
+/*int	main()
 {
 	#include <string.h>
 	#include <stdio.h>

@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcardoso <jcardoso@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/07 18:35:41 by jcardoso          #+#    #+#             */
+/*   Updated: 2024/10/07 18:35:41 by jcardoso         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-size_t ft_strlcat(char *dst, const char *src, size_t buffer)
+
+size_t	ft_strlcat(char *dst, const char *src, size_t buffer)
 {
 	size_t	src_size;
 	size_t	dst_size;
@@ -9,20 +22,21 @@ size_t ft_strlcat(char *dst, const char *src, size_t buffer)
 	dst_size = ft_strlen(dst);
 	i = buffer - dst_size;
 
-	if(i > src_size)
+	if (i > src_size)
 	{
 		while (dst_size < buffer && *src != '\0')
 			dst[dst_size++] = *src++;
 		dst[dst_size] = *src;
-	}else if(buffer != 0)
-		{
-			while(i < buffer - 1)
-				dst[dst_size++] = *src++;
-			dst[dst_size] = '\0';
-		}
-	return buffer;
+	}
+	else if (buffer != 0)
+	{
+		while (i < buffer - 1)
+			dst[dst_size++] = *src++;
+		dst[dst_size] = '\0';
+	}
+	return (buffer);
 }
-int	main()
+/*int	main()
 {
 	char str[] = "Joao Flavio";
 	char str2[20] = "cardoso";
@@ -30,4 +44,4 @@ int	main()
 	ft_strlcat(str2,str,20);
 	printf("%s\n", str2);
 		return (0);
-}
+}*/

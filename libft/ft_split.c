@@ -12,68 +12,60 @@
 
 #include "libft.h"
 
-static int count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	int	i;
 	int	count;
 
-	i = 0;
 	count = 1;
-		while (s[i] != '\0')
+	i = 0;
+	ft_strtrim(s, &c);
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
 		{
-				if(s[i] == c)
-						count++;
+			while (s[i] == c)
 				i++;
+			count++;
 		}
-		return (count);
+		i++;
+	}
+	return (count);
 }
 
-static char **split(char const *s, char **array, int i, char c)
+static void	word_dup(const char *s, char *str, int size)
 {
-	 int    j;
+	int	i;
+
+	i = 0;
+	while (i++ < size)
+		*str++ = *s++;
+	*str = '\0';
+
+}
+
+static char	**split(char const *s, char **array, int i, char c)
+{
+	int	j;
 
 	j = 0;
-     while(*s)
-        {
-            if(*s == c)
-            {
-                array[j] = (char *)malloc(i + 1);
-                if(!array[j])
-                    return (NULL);
-                ft_strlcpy(array[j], s - i, i+1);
-                i = -1;
-                j++;
-            }
-            i++;
-            s++;
-        }
-        array[j] = (char *) malloc(i+1);
-            if(!array[j])
-                return (NULL);
-        ft_strlcpy(array[j], s - i, i + 1);
-        array[++j] = 0;
-        return array;
-}
-
-char **ft_split(char const *s, char c)
-{
-		char        **array;
-
-		array = (char **) malloc(sizeof(char *) * (count_words(s, c)) + 1);
-		if (!array)
-			return (NULL);
-		return (split(s, array, 0, c));
-}
-/*#include <stdio.h>
-int main()
-{
-		int i = 0;
-		char    **arr = ft_split("Welcome to the jungle", ' ');
-		while(i < count_words("Welcome to the Jungle", ' '))
+	while (*s)
+	{
+		if (*(s + 1) == c || *(s + 1) == '\0')
 		{
-				printf("%s\n",arr[i]);
-				i++;
+				
 		}
-		printf("arr[0][8] : %c\n", arr[0][6]);
-		return (0);
-}*/
+	}
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**array;
+
+	array = (char **) malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!array)
+		return (NULL);
+	while (*s == ' ')
+		s++;
+	return (split(s, array, 0, c));
+}

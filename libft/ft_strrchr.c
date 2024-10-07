@@ -1,10 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcardoso <jcardoso@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/07 18:39:59 by jcardoso          #+#    #+#             */
+/*   Updated: 2024/10/07 18:39:59 by jcardoso         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-char*	ft_strrchr(const char* str, int c)
+
+char	*ft_strrchr(const char *str, int c)
 {
 	size_t			find;
-	const char	*str2;
+	const char		*str2;
 
-	if(str == NULL)
+	if (str == NULL)
 		return (NULL);
 
 	find = 0;
@@ -20,7 +33,7 @@ char*	ft_strrchr(const char* str, int c)
 		str++;
 	}
 	if (find == 1)
-		return (char *) (str2);
+		return ((char *)(str2));
 	return (NULL);
 }
 /*int	main()
