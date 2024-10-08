@@ -1,14 +1,29 @@
 #include "libft.h"
 #include <stdio.h>
+void	ft_print_result(char const *s)
+{
+	int		len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
+}
 int main()
 {
-		int i = 0;
-		char    **arr = ft_split("   Welcome to the jungle", ' ');
-		while(i < 4)
+	char	**tabstr;
+	int		i;
+
+	i = 0;
+		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
+			ft_print_result("NULL");
+		else
 		{
-				printf("%s\n",arr[i]);
+			while (tabstr[i] != NULL)
+			{
+				ft_print_result(tabstr[i]);
+				write(1, "\n", 1);
 				i++;
+			}
 		}
-		printf("arr[0][8] : %c\n", arr[0][0]);
-		return (0);
 }

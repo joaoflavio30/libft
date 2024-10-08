@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcardoso <jcardoso@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 13:13:11 by jcardoso          #+#    #+#             */
-/*   Updated: 2024/10/07 13:13:11 by jcardoso         ###   ########.fr       */
+/*   Created: 2024/10/08 13:53:17 by jcardoso          #+#    #+#             */
+/*   Updated: 2024/10/08 13:53:17 by jcardoso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*new_list;
+	int	i;
 
-		while((*lst).nex)
+	if (!lst)
+		return (0);
 
-
+	i = 0;
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

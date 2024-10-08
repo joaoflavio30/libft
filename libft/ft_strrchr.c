@@ -14,34 +14,18 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	size_t			find;
-	const char		*str2;
+	size_t			str_len;
 
 	if (str == NULL)
 		return (NULL);
+	str_len = ft_strlen(str);
 
-	find = 0;
-	str2 = str;
-
-	while (*str)
+	while (str_len > -1)
 	{
 		if (*str == c)
-		{
-			str2 = str;
-			find = 1;
-		}
-		str++;
+			return ((char *)(str));
+		str_len--;
+		str--;
 	}
-	if (find == 1)
-		return ((char *)(str2));
 	return (NULL);
 }
-/*int	main()
-{
-	#include <stdio.h>
-	char str[] = "Joao Flavio";
-	char c = 'a';
-
-	printf("%s\n", ft_strrchr(str, c));
-	return (0);
-}*/

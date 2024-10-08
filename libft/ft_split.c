@@ -14,48 +14,66 @@
 
 static int	count_words(char const *s, char c)
 {
-	int	i;
 	int	count;
 
-	count = 1;
-	i = 0;
-	ft_strtrim(s, &c);
-	while (s[i] != '\0')
+	if (!s)
+		return (0);
+	count = 0;
+	while (*s)
 	{
-		if (s[i] == c)
+		while (*s == c)
+			s++;
+		if (*s != c && *s)
 		{
-			while (s[i] == c)
-				i++;
 			count++;
+			while (*s != c && *s)
+				s++;
 		}
-		i++;
 	}
 	return (count);
 }
 
-static void	word_dup(const char *s, char *str, int size)
+static void	cpy(char *array, char const *s, int end)
 {
 	int	i;
 
 	i = 0;
-	while (i++ < size)
-		*str++ = *s++;
-	*str = '\0';
-
+	while (i < end)
+	{
+		array[i] = *s;
+		i++;
+		s++;
+	}
+	array[i] = '\0';
 }
 
-static char	**split(char const *s, char **array, int i, char c)
+static char	**split(char const *s, char **array, char c)
 {
 	int	j;
+	int	i;
+	int	start;
+	int	end;
 
 	j = 0;
-	while (*s)
+	i = 0;
+
+	while (s[i])
 	{
-		if (*(s + 1) == c || *(s + 1) == '\0')
-		{
-				
-		}
+		while (s[i] == c)
+			i++;
+		if (s[i] == '\0')
+			break ;
+		start = i;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		end = i - start;
+		array[j] = (char *) malloc(sizeof(char *) * (end + 1));
+		if (!array)
+			return (NULL);
+		cpy(array[j++], &s[start], end + 1);
 	}
+	array[j] = 0;
+	return (array);
 }
 
 char	**ft_split(char const *s, char c)
@@ -67,5 +85,5 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (*s == ' ')
 		s++;
-	return (split(s, array, 0, c));
+	return (split(s, array, c));
 }
