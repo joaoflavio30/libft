@@ -1,4 +1,14 @@
-# -*- Makefile -*-
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jcardoso <jcardoso@student.42.rio>         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/10/10 18:55:10 by jcardoso          #+#    #+#              #
+#    Updated: 2024/10/10 18:55:10 by jcardoso         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
@@ -23,11 +33,11 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
 
-bonus: $(OBJECTS) $(B_OBJECTS)
-	ar rcs $(NAME) $(OBJECTS) $(B_OBJECTS)
+bonus: $(B_OBJECTS)
+	ar rcs $(NAME) $(B_OBJECTS)
 
 %.o: %.c
-	cc $(CFLAGS) -c $< -o $@
+	cc $(CFLAGS) -o $@ -c $<
 
 clean:
 	rm -f $(OBJECTS) $(B_OBJECTS)
