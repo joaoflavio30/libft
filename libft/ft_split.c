@@ -67,10 +67,10 @@ static char	**split(char const *s, char **array, char c)
 		while (s[i] != c && s[i] != '\0')
 			i++;
 		end = i - start;
-		array[j] = (char *) malloc(sizeof(char *) * (end + 1));
-		if (!array)
+		array[j] = (char *) malloc(sizeof(char) * (end + 1));
+		if (!array[j])
 			return (NULL);
-		cpy(array[j++], &s[start], end + 1);
+		cpy(array[j++], &s[start], end);
 	}
 	array[j] = 0;
 	return (array);
@@ -80,10 +80,10 @@ char	**ft_split(char const *s, char c)
 {
 	char	**array;
 
+	if (!s)
+		return (NULL);
 	array = (char **) malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!array)
 		return (NULL);
-	while (*s == ' ')
-		s++;
 	return (split(s, array, c));
 }

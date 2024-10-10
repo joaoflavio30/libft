@@ -6,7 +6,7 @@
 /*   By: jcardoso <jcardoso@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 14:23:44 by jcardoso          #+#    #+#             */
-/*   Updated: 2024/10/07 12:59:33 by jcardoso         ###   ########.fr       */
+/*   Updated: 2024/10/10 10:55:06 by jcardoso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ char	*ft_itoa(int n)
 	long int	nb;
 	char		*numb;
 	int			len;
-
+	
+	if (n == 0)
+		return (ft_strdup("0"));
 	nb = n;
 	len = get_len(nb);
 	numb = (char *) malloc(len + 1);
@@ -49,17 +51,8 @@ char	*ft_itoa(int n)
 	}
 	while (nb > 0)
 	{
-		numb[len - 1] = (nb % 10) + '0';
+		numb[--len] = (nb % 10) + '0';
 		nb = nb / 10;
-		len--;
 	}
 	return (numb);
 }
-/*int	main()
-{
-	#include <stdlib.h>
-	#include <stdio.h>
-
-	printf("%s\n", ft_itoa(0422));
-	return (0);
-}*/

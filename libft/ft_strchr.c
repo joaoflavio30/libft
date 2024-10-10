@@ -20,10 +20,12 @@ char	*ft_strchr(const char *str, int search_str)
 
 	while (*str)
 	{
-		if (*str == search_str)
+		if (*str == (unsigned char)search_str)
 			return ((char *)str);
 		str++;
 	}
+	if(*str == (unsigned char)search_str)
+		return ((char *)str);
 	return (NULL);
 }
 /*int	main(void)

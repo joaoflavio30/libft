@@ -18,30 +18,21 @@ size_t	ft_strlcat(char *dst, const char *src, size_t buffer)
 	size_t	dst_size;
 	size_t	i;
 
+	if (!dst || !src)
+		return (0);
 	src_size = ft_strlen(src);
 	dst_size = ft_strlen(dst);
-	i = buffer - dst_size;
-
-	if (i > src_size)
+	i = 0;
+	if (dst_size >= buffer)
+		return (buffer + src_size);
+	if (buffer != 0)
 	{
-		while (dst_size < buffer && *src != '\0')
-			dst[dst_size++] = *src++;
-		dst[dst_size] = *src;
+		while ((i + dst_size) < (buffer - 1) && src[i] != '\0')
+		{
+			dst[dst_size + i] = src[i];
+			i++;
+		}
+		dst[dst_size + i] = '\0'; 
 	}
-	else if (buffer != 0)
-	{
-		while (i < buffer - 1)
-			dst[dst_size++] = *src++;
-		dst[dst_size] = '\0';
-	}
-	return (buffer);
+	return (src_size + dst_size);
 }
-/*int	main()
-{
-	char str[] = "Joao Flavio";
-	char str2[20] = "cardoso";
-#include <stdio.h>
-	ft_strlcat(str2,str,20);
-	printf("%s\n", str2);
-		return (0);
-}*/

@@ -20,17 +20,10 @@ void	*ft_memset(void *dest, int c, size_t count)
 
 	str = (unsigned char *)dest;
 	i = 0;
-	while (i++ < count)
+	while (i < count)
+	{
 		str[i] = c;
-	return (str);
+		i++;
+	}
+	return (dest);
 }
-/*int	main()
-{
-
-#include <stdio.h>
-	char str[] = "Ola mundo!";
-	printf("%s\n", str);
-	ft_memset(str+3, '-', 6);
-	printf("%s\n", str);
-	return 0;
-}*/

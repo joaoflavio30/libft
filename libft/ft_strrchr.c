@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	size_t			str_len;
+	int			str_len;
 
 	if (str == NULL)
 		return (NULL);
@@ -22,10 +22,9 @@ char	*ft_strrchr(const char *str, int c)
 
 	while (str_len > -1)
 	{
-		if (*str == c)
-			return ((char *)(str));
+		if (str[str_len] == (unsigned char) c)
+			return ((char *)(str + (str_len)));
 		str_len--;
-		str--;
 	}
 	return (NULL);
 }

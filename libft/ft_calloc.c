@@ -16,12 +16,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void		*ptr;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
 	ptr = (unsigned char *) malloc(size * nmemb);
 	if (!ptr)
 		return (NULL);
-	ft_memset(ptr, 0, size * nmemb);
+	ft_bzero(ptr, size * nmemb);
 	return (ptr);
 }
 
