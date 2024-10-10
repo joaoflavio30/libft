@@ -14,28 +14,15 @@
 
 char	*ft_strchr(const char *str, int search_str)
 {
-
 	if (str == NULL)
 		return (NULL);
-
 	while (*str)
 	{
 		if (*str == (unsigned char)search_str)
 			return ((char *)str);
 		str++;
 	}
-	if(*str == (unsigned char)search_str)
+	if (*str == (unsigned char)search_str)
 		return ((char *)str);
 	return (NULL);
 }
-/*int	main(void)
-{
-	#include <stdio.h>
-	#include <string.h>
-	char str[] = "abc";
-	char c = 'c';
-
-	printf("%s\n", ft_strchr(str, c));
-	printf("strchr: %s\n", strchr(str, c));
-	return (0);
-}*/

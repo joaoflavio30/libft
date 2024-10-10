@@ -56,7 +56,6 @@ static char	**split(char const *s, char **array, char c)
 
 	j = 0;
 	i = 0;
-
 	while (s[i])
 	{
 		while (s[i] == c)

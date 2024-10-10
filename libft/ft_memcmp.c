@@ -21,7 +21,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	s1_ref = (unsigned char *)s1;
 	s2_ref = (unsigned char *)s2;
-
 	while (i++ < n)
 	{
 		if (*s1_ref != *s2_ref)
@@ -31,11 +30,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*int	main()
-{
-	char str[] = "joaa";
-	char str2[] = "joao";
-	#include <stdio.h>
-	printf("%d\n", ft_memcmp(str, str2, 4));
-	return (0);
-}*/

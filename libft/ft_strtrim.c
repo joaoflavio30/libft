@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t		end;
 	char		*str;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	end = ft_strlen(s1);
 	while (s1[start] != '\0' && ft_strchr(set, s1[start]))
@@ -27,10 +29,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = ft_substr(&(s1[start]), 0, end - start);
 	return (str);
 }
-/*#include <stdio.h>
-int main()
-{
-        printf("%s\n", ft_strtrim("******!**abc****", "*a"));
-
-    return (0);
-}*/

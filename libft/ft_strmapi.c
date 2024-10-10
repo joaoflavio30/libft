@@ -21,7 +21,6 @@ int, char))
 
 	if (!s)
 		return (NULL);
-
 	i = 0;
 	len = ft_strlen(s);
 	str = (char *) malloc(len + 1);
@@ -35,14 +34,3 @@ int, char))
 	str[i] = '\0';
 	return (str);
 }
-/*char    func(unsigned int i, char c)
-{
-    return (c + i);
-}
-
-#include <stdio.h>
-int main(void)
-{
-    printf("%s\n", ft_strmapi("Joao",func));
-    return (0);
-}*/

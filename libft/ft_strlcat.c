@@ -32,7 +32,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t buffer)
 			dst[dst_size + i] = src[i];
 			i++;
 		}
-		dst[dst_size + i] = '\0'; 
+		dst[dst_size + i] = '\0';
 	}
 	return (src_size + dst_size);
 }

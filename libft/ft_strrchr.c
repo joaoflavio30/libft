@@ -19,7 +19,6 @@ char	*ft_strrchr(const char *str, int c)
 	if (str == NULL)
 		return (NULL);
 	str_len = ft_strlen(str);
-
 	while (str_len > -1)
 	{
 		if (str[str_len] == (unsigned char) c)
