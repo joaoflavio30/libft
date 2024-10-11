@@ -5,13 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jcardoso <jcardoso@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/10 18:55:10 by jcardoso          #+#    #+#              #
-#    Updated: 2024/10/10 18:55:10 by jcardoso         ###   ########.fr        #
+#    Created: 2024/10/10 22:45:51 by jcardoso          #+#    #+#              #
+#    Updated: 2024/10/10 22:45:51 by jcardoso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-CFLAGS = -Wall -Wextra -Werror
 
 C_SOURCE = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
            ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c  ft_memchr.c \
@@ -28,16 +27,19 @@ B_C_SOURCE = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c 
 OBJECTS = $(C_SOURCE:.c=.o)
 B_OBJECTS = $(B_C_SOURCE:.c=.o)
 
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	ar rcs $(NAME) $(OBJECTS)
+	ar -rcs $(NAME) $(OBJECTS)
 
-bonus: $(B_OBJECTS)
-	ar rcs $(NAME) $(B_OBJECTS)
+bonus: $(OBJECTS) $(B_OBJECTS)
+	ar -rcs $(NAME) $(OBJECTS) $(B_OBJECTS)
 
-%.o: %.c
-	cc $(CFLAGS) -o $@ -c $<
+.c.o:
+	$(CC) $(CFLAGS) -c $<
 
 clean:
 	rm -f $(OBJECTS) $(B_OBJECTS)
@@ -46,5 +48,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re bonus
